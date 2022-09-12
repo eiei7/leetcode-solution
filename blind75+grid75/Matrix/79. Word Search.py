@@ -6,10 +6,10 @@ class Solution:
         m, n = len(board), len(board[0])
         visited = set()
         
-        def dfs(i, j, pos):#函数中的函数，可以直接使用其上边的变量
+        def dfs(i, j, pos):
             if pos == len(word):
                 return True
-            #i, j -> board中词的位置，pos是word中词的位置
+            #i, j -> board
             if i < 0 or i >= m or j < 0 or j >= n or board[i][j] != word[pos] or (i, j) in visited:
                 return False
             
