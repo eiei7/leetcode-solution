@@ -9,7 +9,7 @@ class Solution:
                 res.append(matrix[top][i])
             top += 1
             #right column
-            for i in range(top, bottom):#不会有重叠，因为top+1了
+            for i in range(top, bottom):
                 res.append(matrix[i][right - 1])
             right -= 1
             #special cases
