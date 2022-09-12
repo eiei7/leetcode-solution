@@ -34,9 +34,9 @@ class Solution:
             return None
         newhead = head
         if head.next:
-            newhead = self.reverseList(head.next)#当前head的子问题
-            head.next.next = head#倒序指向
-        head.next = None#最后一次结束后，最后一个元素指向null
+            newhead = self.reverseList(head.next)#subproblems of current head
+            head.next.next = head#reverse
+        head.next = None
         return newhead
 #TC: O(n) 
 #SC: O(n) 
