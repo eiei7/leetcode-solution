@@ -1,6 +1,6 @@
 # leetcode-solution
 
-This is a blog which records leetcode problems I solved.
+This is a blog which records some leetcode problems I solved.
 
 Training sets:
 
