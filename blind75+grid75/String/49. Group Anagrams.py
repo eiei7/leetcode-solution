@@ -4,12 +4,12 @@ class Solution:
         hashmap = collections.defaultdict(list)
         
         for s in strs:#O(m)
-            count = [0] * 26#定长的list，将某个字符串中字符出现的次数映射到对应的下标中
+            count = [0] * 26
             for c in s:#O(m * n)
-                count[ord(c) - ord('a')] += 1 #a->0,b->1以此类推
-            hashmap[tuple(count)].append(s)#将count pattern一样的str加入到hashmap中
-        return hashmap.values()#只返回hashmap中的值
-#using tuple 因为不可变，而list可变，且list unhashable
+                count[ord(c) - ord('a')] += 1 #a->0,b->1
+            hashmap[tuple(count)].append(s)#
+        return hashmap.values()
+#using tuple because it's immutable. list is mutable and unhashable
 
 #TC: O(m * n)
 #SC: O(26 * m) = O(m)
