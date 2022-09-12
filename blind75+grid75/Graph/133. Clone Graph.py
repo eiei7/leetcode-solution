@@ -1,14 +1,13 @@
 class Solution:
     def cloneGraph(self, node: 'Node') -> 'Node':
-        hashmap = {}#一个存储clone过的点的工具/记录
-        #因为不是所有的图都有环/回到起点，所以需要积累下来起点在哪(<-clone()会回到第一层)
+        hashmap = {}
         def clone(node):
             if node in hashmap:
                 return hashmap[node]
             hashmap[node] = Node(node.val)
             for nbs in node.neighbors:
-                hashmap[node].neighbors.append(clone(nbs))#这个被clone过的点的邻居也必须是clone过的点
-            return hashmap[node]#以node为起点的图（内部结构已经构建好了）
+                hashmap[node].neighbors.append(clone(nbs))
+            return hashmap[node]
         
         return clone(node) if node else None
 
