@@ -9,12 +9,12 @@ Method1: recursion
 #         self.right = right
 class Solution:
     def buildTree(self, preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
-        if not preorder or not inorder:#在递归中，若当前的preorder为空或当前的inorder为空，则没有结点需要再填充了，应返回None
+        if not preorder or not inorder:
             return None
         
         root = TreeNode(preorder[0])
         mid = inorder.index(preorder[0])
-        root.left = self.buildTree(preorder[1:mid + 1], inorder[:mid + 1])#新数组的第二个元素做根
+        root.left = self.buildTree(preorder[1:mid + 1], inorder[:mid + 1])
         root.right = self.buildTree(preorder[mid + 1:], inorder[mid + 1:])
         return root
 
