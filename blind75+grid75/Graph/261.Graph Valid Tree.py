@@ -12,7 +12,7 @@ class Solution:
     @return: true if it's a valid tree, or false
     """
     def valid_tree(self, n: int, edges: List[List[int]]) -> bool:
-        # 小心这段，node是nei的邻居，nei也是node的邻居
+        # node is neighbor of nei, nei is neighbor of node
         hashmap = {i: set() for i in range(n)}
         for node, nei in edges:
             hashmap[node].add(nei)
@@ -21,7 +21,7 @@ class Solution:
         visited = set()
 
         def dfs(node, pre):
-            if node in visted:#有loop存在，不是树
+            if node in visted:#existing a loop
                 return False
             visited.add(node)
             for nei in hashmap[node]:
@@ -30,5 +30,5 @@ class Solution:
                 if not dfs(nei, node):
                     return False
             return True
-        #default pre = -1 ; 存在非连通分量，不是树<-> n > len(visited)
+        #default pre = -1 ; more than 1 connected components <-> not a tree <-> n > len(visited)
         return dfs(0, -1) and n == len(visited)
