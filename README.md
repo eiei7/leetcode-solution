@@ -10,4 +10,4 @@ Training sets:
 
    https://neetcode.io/practice
 
-2. High Frequentcy Problems
+2. High Frequentcy Problems of Big Tech Industries
